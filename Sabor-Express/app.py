@@ -1,6 +1,6 @@
 import os
 
-restaurants = ['Pizza', 'Comet']
+restaurants = []
 
 def show_program_name():
     print("""
