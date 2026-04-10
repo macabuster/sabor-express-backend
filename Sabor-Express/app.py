@@ -20,8 +20,7 @@ def show_options():
     print('4. Sair \n')
 
 def close_app():
-    os.system('clear')
-    print('Encerrando o programa')
+    show_subtitle('Encerrando o programa')
 
 def return_main_menu():
     input('\nDigite uma tecla para voltar ao menu principal: ')
@@ -29,12 +28,16 @@ def return_main_menu():
 
 def invalid_option():
     print('Opção inválida! \n')
-    input('\nDigite uma tecla para voltar ao menu principal: ')
-    main()
+
+    return_main_menu()
+
+def show_subtitle(text):
+    os.system('clear')
+    print(text)
+    print()
 
 def create_restaurant():
-    os.system('clear')
-    print('Cadastrar restaurante: \n')
+    show_subtitle('Cadastrar restaurante: ')
     restaurant_name = input('Digite o nome do restaurante para que deseja cadastrar: ')
     restaurants.append(restaurant_name)
     print(f'Restaurante cadastrado com sucesso! \n [ {restaurant_name} ] ✅')
@@ -42,8 +45,7 @@ def create_restaurant():
     return_main_menu()
 
 def list_restaurants():
-    os.system('clear')
-    print('Restaurantes cadastrados: \n')
+    show_subtitle('Restaurantes cadastrados: ')
 
     for restaurant in restaurants: 
         print(f'- {restaurant} \n')
